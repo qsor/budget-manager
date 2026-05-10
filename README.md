@@ -46,13 +46,15 @@ Ensure you have the following installed:
    cd budget-manager ```
 
 2. Install dependencies:
-   ``` npm install ```
+   ```bash
+    npm install ```
 
-3. Start the development server:
-   ``` npm run dev ```
+4. Start the development server:
+   ```bash
+    npm run dev ```
 The application will run at http://localhost:5173
 
-4. Run tests (optional):
+6. Run tests (optional):
    ``` npm run test ```
 
 
