@@ -43,4 +43,29 @@ Ensure you have the following installed:
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/budget-manager.git
-   cd budget-manager
+   cd budget-manager ```
+
+2. Install dependencies:
+   ``` npm install ```
+
+3. Start the development server:
+   ``` npm run dev ```
+The application will run at http://localhost:5173
+
+4. Run tests (optional):
+   ``` npm run test ```
+
+
+## Support
+
+If you find this project useful, please consider giving it a star on GitHub. Your support helps me improve the project and motivates further development.
+
+⭐ [Star this repository](https://github.com/qsor/budget-manager)
+
+## Contact
+
+For feedback, suggestions, or collaboration opportunities, feel free to reach out:
+
+- Telegram: [@qsor_ru](http://t.me/qsor_ru)
+- GitHub: [@qsor](https://github.com/qsor)
+- Email: qsor.support@gmail.com
