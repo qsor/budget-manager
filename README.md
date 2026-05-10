@@ -38,7 +38,7 @@ Ensure you have the following installed:
 - Node.js 18+ 
 - npm or yarn
 
-### Step-by-Step Setup
+### Step-by-Step ( Year after year XD )  Setup
 
 1. Clone the repository:
    ```bash
