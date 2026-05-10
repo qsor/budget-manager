@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .touch-active {
+    transition: transform 0.12s ease, background-color 0.12s ease, box-shadow 0.12s ease;
+  }
+  .touch-active:active {
+    transform: scale(0.96);
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+  .touch-active:hover {
+    transform: none;
+  }
+}
+
+input, select, button {
+  font-size: 16px;
+}
