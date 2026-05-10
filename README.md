@@ -47,15 +47,16 @@ Ensure you have the following installed:
 
 2. Install dependencies:
    ```bash
-    npm install ```
+    npm install
 
 4. Start the development server:
    ```bash
-    npm run dev ```
+    npm run dev
 The application will run at http://localhost:5173
 
 6. Run tests (optional):
-   ``` npm run test ```
+   ```bash
+    npm run test
 
 
 ## Support
