@@ -2,10 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
+:root {
+  --font-family: system-ui;
+  --bg-primary: #f8fafc;
+  --bg-card: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --border-color: #e2e8f0;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+}
+
+.dark {
+  --bg-primary: #2c333f;
+  --bg-card: #3a4452;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --border-color: #475569;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-family);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    overflow-x: hidden;
+  }
 }
 
 @media (hover: none) and (pointer: coarse) {
@@ -14,7 +40,7 @@ body {
   }
   .touch-active:active {
     transform: scale(0.96);
-    background-color: rgba(0, 0, 0, 0.04);
+    background-color: rgba(0, 0, 0, 0.08);
   }
   .touch-active:hover {
     transform: none;
@@ -25,21 +51,18 @@ input, select, button {
   font-size: 16px;
 }
 
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #cbd5e1 transparent;
-}
-
-*::-webkit-scrollbar {
+.custom-scrollbar::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
-
-*::-webkit-scrollbar-track {
+.custom-scrollbar::-webkit-scrollbar-track {
   background: transparent;
 }
-
-*::-webkit-scrollbar-thumb {
-  background-color: #cbd5e1;
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
   border-radius: 3px;
+}
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
 }
