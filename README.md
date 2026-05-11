@@ -4,6 +4,7 @@ A responsive web application for tracking personal income and expenses. Built wi
 
 [Demonstration](https://budget-manager-beta-smoky.vercel.app/)
 
+
 ## Description
 
 Budget Manager is a lightweight, client-side finance tracker that helps users monitor daily spending and income. All data is stored securely in the browser using LocalStorage, eliminating the need for a backend while ensuring persistence across sessions. The interface adapts seamlessly between desktop and mobile devices, featuring optimized touch interactions for mobile users and a structured grid layout for desktop screens.
