@@ -2,7 +2,7 @@
 
 A responsive web application for tracking personal income and expenses. Built with React and Vite, it features data visualization, real-time filtering, local persistence, and a mobile-first design with touch-optimized interactions.
 
-[Live Demo](https://your-demo-link.vercel.app)
+[Live Demo]([https://your-demo-link.vercel.app](https://budget-manager-beta-smoky.vercel.app)
 
 ## Description
 
