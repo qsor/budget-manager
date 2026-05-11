@@ -1,13 +1,13 @@
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts'
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts'
 import { CATEGORY_COLORS, CATEGORIES } from '../constants'
 import { formatCurrency } from '../utils/formatCurrency'
 
-export function TransactionChart({ transactions, type = 'expense' }) {
-  const categoryList = type === 'income' ? CATEGORIES.income : CATEGORIES.expense
+export function TransactionChart({ transactions, chartType }) {
+  const categoryList = chartType === 'income' ? CATEGORIES.income : CATEGORIES.expense
   
   const data = categoryList.map(cat => {
     const sum = transactions
-      .filter(tx => tx.category === cat.id && tx.type === type)
+      .filter(tx => tx.category === cat.id && tx.type === chartType)
       .reduce((acc, curr) => acc + curr.amount, 0)
     return { 
       name: cat.label, 
@@ -20,22 +20,22 @@ export function TransactionChart({ transactions, type = 'expense' }) {
 
   if (data.length === 0) {
     return (
-      <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center">
-        <p className="text-gray-500">Нет данных для отображения</p>
+      <div className="bg-[var(--bg-card)] p-6 rounded-2xl border border-[var(--border-color)] text-center h-full flex items-center justify-center">
+        <p className="text-[var(--text-secondary)]">Нет данных для отображения</p>
       </div>
     )
   }
 
   return (
-    <div className="bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-gray-100">
+    <div className="bg-[var(--bg-card)] p-4 sm:p-6 rounded-2xl border border-[var(--border-color)] h-full flex flex-col">
       <div className="flex justify-between items-center mb-4">
-        <h3 className="text-lg font-semibold text-gray-800">
-          {type === 'income' ? 'Источники дохода' : 'Структура расходов'}
+        <h3 className="text-lg font-semibold">
+          {chartType === 'income' ? 'Источники дохода' : 'Структура расходов'}
         </h3>
-        <span className="text-sm text-gray-500">{formatCurrency(total)}</span>
+        <span className="text-sm text-[var(--text-secondary)]">{formatCurrency(total)}</span>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+      <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
         <div className="h-48 sm:h-64">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
@@ -55,13 +55,13 @@ export function TransactionChart({ transactions, type = 'expense' }) {
               </Pie>
               <Tooltip 
                 formatter={(value) => [`${formatCurrency(value)}`, 'Сумма']}
-                contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
+                contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', backgroundColor: 'var(--bg-card)', color: 'var(--text-primary)' }}
               />
             </PieChart>
           </ResponsiveContainer>
         </div>
         
-        <div className="space-y-2 max-h-48 overflow-auto pr-2">
+        <div className="space-y-2 max-h-48 overflow-auto custom-scrollbar pr-2">
           {data.map((item) => (
             <div key={item.name} className="flex items-center justify-between text-sm">
               <div className="flex items-center gap-2">
@@ -69,9 +69,9 @@ export function TransactionChart({ transactions, type = 'expense' }) {
                   className="w-3 h-3 rounded-full flex-shrink-0" 
                   style={{ backgroundColor: item.color }}
                 />
-                <span className="text-gray-600">{item.name}</span>
+                <span className="text-[var(--text-secondary)]">{item.name}</span>
               </div>
-              <span className="font-medium text-gray-800">{formatCurrency(item.value)}</span>
+              <span className="font-medium">{formatCurrency(item.value)}</span>
             </div>
           ))}
         </div>
