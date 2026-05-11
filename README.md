@@ -2,7 +2,7 @@
 
 A responsive web application for tracking personal income and expenses. Built with React and Vite, it features data visualization, real-time filtering, local persistence, and a mobile-first design with touch-optimized interactions.
 
-[Live Demo]([https://your-demo-link.vercel.app])
+[Live Demo](https://budget-manager.vercel.app)
 
 ## Description
 
@@ -10,24 +10,28 @@ Budget Manager is a lightweight, client-side finance tracker that helps users mo
 
 ## Features
 
-- Add, delete, and manage income/expense transactions
-- Categorize transactions with predefined labels
-- Real-time filtering by type and keyword search
-- Interactive expense breakdown using Recharts
-- CSV export functionality for external analysis
+- Add, delete, and manage income/expense transactions with categories
+- Interactive pie chart with toggle between expenses and income views
+- Real-time filtering by type, category, and keyword search
+- Multi-format export: CSV (Excel-compatible), JSON, and plain TXT
 - Automatic data persistence via LocalStorage
-- Responsive layout optimized for desktop and mobile
-- Touch-specific animations and iOS input fixes
+- PWA support: installable on mobile/desktop, works offline
+- Responsive layout with desktop-optimized grid and mobile touch animations
+- Dark mode with custom color scheme (#2c333f background)
+- Font switching: System, Inter, Roboto, JetBrains Mono
 - Form validation and confirmation dialogs for destructive actions
+- Virtualized list rendering for performance with large datasets
 
 ## Tech Stack
 
-- React 18
-- Vite
-- Tailwind CSS
-- Recharts
-- Vitest & React Testing Library
-- LocalStorage API
+- React 18 with Hooks and Context
+- Vite for fast development and optimized builds
+- Tailwind CSS for utility-first styling with dark mode support
+- Recharts for interactive data visualization
+- @tanstack/react-virtual for list virtualization
+- vite-plugin-pwa for Progressive Web App functionality
+- Vitest & React Testing Library for unit testing
+- LocalStorage API for client-side persistence
 - JavaScript (ES6+)
 
 ## Installation
@@ -35,8 +39,8 @@ Budget Manager is a lightweight, client-side finance tracker that helps users mo
 ### Prerequisites
 
 Ensure you have the following installed:
-- Node.js 18+ 
-- npm or yarn
+- Node.js 18 or higher
+- npm or yarn package manager
 
 ### Step-by-Step ( Year after year XD )  Setup
 
