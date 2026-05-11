@@ -1,6 +1,7 @@
+import { memo } from 'react'
 import { formatCurrency } from '../utils/formatCurrency'
 
-export function TransactionItem({ transaction, onDelete }) {
+const TransactionItem = memo(function TransactionItem({ transaction, onDelete }) {
   const isIncome = transaction.type === 'income'
 
   return (
@@ -29,4 +30,6 @@ export function TransactionItem({ transaction, onDelete }) {
       </div>
     </div>
   )
-}
+})
+
+export default TransactionItem
