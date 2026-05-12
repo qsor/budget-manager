@@ -1,3 +1,5 @@
+
+
 export const CATEGORIES = {
   expense: [
     { id: 'food', label: 'Продукты' },
@@ -17,6 +19,8 @@ export const CATEGORIES = {
     { id: 'other', label: 'Другое' }
   ]
 }
+
+
 
 export const CATEGORY_COLORS = {
   food: '#ef4444',
