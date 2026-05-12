@@ -15,6 +15,7 @@ export function useSettings() {
     } catch {
       return DEFAULTS
     }
+    
   })
 
   useEffect(() => {
